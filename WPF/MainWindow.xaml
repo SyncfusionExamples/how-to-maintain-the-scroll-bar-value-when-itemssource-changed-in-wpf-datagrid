@@ -21,7 +21,7 @@
             </syncfusion:SfDataGrid.GroupColumnDescriptions>
         </syncfusion:SfDataGrid>
         <StackPanel >
-            <Button Click="Button_Click_1" Content="Item Source Change" Width="120" Height="30" Margin="10" />
+            <Button Click="Button_Click_1" Content="ItemsSource Change" Width="120" Height="30" Margin="10" />
 
         </StackPanel>
     </Grid>
