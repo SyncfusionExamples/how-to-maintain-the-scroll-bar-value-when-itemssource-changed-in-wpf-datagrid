@@ -3,7 +3,8 @@
 How to maintain the scroll bar value when ItemsSource changed in WPF DataGrid (SfDataGrid)?
 
 # About the sample
-By default, the scrollbar position is not maintained and gets reset when changing the ItemsSource of the SfDataGrid. But, you can maintain the scrollbar position of the SfDataGrid by SfDataGrid.CanMaintainScrollPosition property.
+
+By default, the scrollbar position is not maintained and gets reset when changing the ItemsSource of the SfDataGrid. But, you can maintain the scrollbar position of the SfDataGrid by get and set the scrollbar value.
 
 ```c#
 this.dataGrid.ItemsSourceChanged += DataGrid_ItemsSourceChanged;
