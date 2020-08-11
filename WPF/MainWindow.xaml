@@ -1,0 +1,29 @@
+﻿<Window x:Class="SfDataGrid_Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+        xmlns:local="clr-namespace:SfDataGrid_Sample"
+        Title="MainWindow" Height="494.292" Width="1091.197">
+
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid Grid.Column="0" x:Name="dataGrid" AutoExpandGroups="True"  ShowGroupDropArea="True" ItemsSource="{Binding Orders}" AddNewRowPosition="Top" Margin="0,61,0.333,-0.333">
+            <syncfusion:SfDataGrid.GroupColumnDescriptions>
+                <syncfusion:GroupColumnDescription ColumnName="Country"/>
+            </syncfusion:SfDataGrid.GroupColumnDescriptions>
+        </syncfusion:SfDataGrid>
+        <StackPanel >
+            <Button Click="Button_Click_1" Content="ItemsSource Change" Width="120" Height="30" Margin="10" />
+
+        </StackPanel>
+    </Grid>
+   
+</Window>
