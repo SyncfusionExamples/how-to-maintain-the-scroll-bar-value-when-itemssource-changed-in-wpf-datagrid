@@ -58,5 +58,8 @@ private void Button_Click_1(object sender, RoutedEventArgs e)
     this.dataGrid.ItemsSource = viewModel.Ordersnew;
 }
 ```
+
+KB article - [How to maintain the scroll bar value when ItemsSource changed in WPF DataGrid (SfDataGrid)](https://www.syncfusion.com/kb/11858/how-to-maintain-the-scroll-bar-value-when-itemssource-changed-in-wpf-datagrid-sfdatagrid)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
