@@ -1,6 +1,6 @@
 # How to Maintain the ScrollBar Value when ItemsSource Changed in WPF DataGrid?
 
-The sample show cases how to maintain the scroll bar value when [ItemsSource](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_ItemsSource) changed in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
+The sample show cases how to maintain the scroll bar value when [ItemsSource](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_ItemsSource) changed in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
 The `DataGrid` cannot maintain the scrollbar position when `ItemsSource` changed. But you can achieve this by get and set the scrollbar position using [SfDataGrid.ItemsSourceChanged](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_ItemsSourceChanged) event.
 
@@ -15,10 +15,12 @@ private void DataGrid_ItemsSourceChanged(object sender, GridItemsSourceChangedEv
         {
             this.dataGrid.GroupColumnDescriptions.Add(new GroupColumnDescription() { ColumnName = col });
         }
+
         foreach (Group group in dataGrid.View.Groups)
         {
             var isExpandGroup = group;
             var key = expandedGroups.FirstOrDefault(colu => colu.Key.ToString() == isExpandGroup.Key.ToString());
+
             do
             {
                 if (key != null)
@@ -47,8 +49,10 @@ private void Button_Click_1(object sender, RoutedEventArgs e)
         if (group.IsExpanded)
             expandedGroups.Add(group);
     }
+
     foreach (GroupColumnDescription groupColumnDescriptions in dataGrid.GroupColumnDescriptions)
         columnName.Add(groupColumnDescriptions.ColumnName);
+
     VisualContainer container = this.dataGrid.GetVisualContainer();
     double scrollValue = container.ScrollRows.ScrollBar.Value;
     this.Scrollbarvalue = scrollValue;
